@@ -31,28 +31,7 @@ SIMPLE METHOD
   # Thanks if you use this source code >//<it
 
 
-## FOR TERMUX/USERS
 
-```bash
-apt update && apt upgrade
-apt install git -y
-apt install nodejs -y
-apt install ffmpeg -y
-git https://github.com/toxic-leo1/Toxicleo-MD
-npm install
-```
-
-## RECOMMENDED INSTALL ON TERMUX
-
-```bash
-pkg install yarn
-yarn
-```
-
-## Installing
-```bash
-$ node .
-```
       
 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮 
 

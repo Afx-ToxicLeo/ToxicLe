@@ -3,9 +3,9 @@
   "description": "Toxic Leo Multi Device whatsappbot",
   "logo": "https://i.postimg.cc/t4V7mPT3/Akash.jpg",
   "keywords": ["whatsapp"],
-  "repository": "https://github.com/V1P3R-X/X-AsenaDuplicated",
-  "website": "https://github.com/V1P3R-X/X-AsenaDuplicated",
-  "success_url": "https://github.com/V1P3R-X/X-AsenaDuplicated",
+  "repository": "https://github.com/Afx-ToxicLeo/LEO-MD",
+  "website": "https://github.com/Afx-ToxicLeo/LEO-MD",
+  "success_url": "https://github.com/Afx-ToxicLeo/LEO-MD",
   "stack": "container",
   "env": {
     "ANTI_LINK": {

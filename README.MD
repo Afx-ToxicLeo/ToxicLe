@@ -26,16 +26,14 @@ SIMPLE METHOD
    
 
 ---------
- 
 
-      
-###𝙶𝚛𝚘𝚞𝚙 𝙻𝚒𝚗𝚔
 
 [![join](https://github.com/Alien-alfa/PublicBot/blob/main/wlogo.svg.png)](https://chat.whatsapp.com/FCwVcEZvwWLCcO0h1P2IBG)
   <div align="center">
 
 
-𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘
+
+
 
 [![subscribe](https://i.ibb.co/mqttCVQ/images-1-1.png)](https://youtube.com/channel/UCNAXcvRkE73MkHNC0RH1_5Q)
 

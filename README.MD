@@ -21,7 +21,7 @@ SIMPLE METHOD
 
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://new-qio.herokuapp.com/)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Afx-ToxicLeo/ToxicLeo-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Afx-ToxicLeo/LEO-MD)
  
    
 

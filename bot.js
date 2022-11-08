@@ -38,7 +38,7 @@ async function Xasena() {
   await config.DATABASE.sync();
 
 const { state, saveState } = await useSingleFileAuthState(
-    "./session.json",
+    "./media/session.json",
     pino({ level: "silent" })
   )
   let conn = makeWASocket({

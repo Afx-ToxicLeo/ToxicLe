@@ -15,18 +15,13 @@ const got = require("got");
 const config = require("./config");
 const { PluginDB } = require("./lib/database/plugins");
 const Greetings = require("./lib/Greetings");
-const { MakeSession } = require("./lib/session");
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
 
 require("events").EventEmitter.defaultMaxListeners = 500;
 
-if (!fs.existsSync("./media/session.json")) {
-  MakeSession(config.SESSION_ID, "./media/session.json").then(
-    console.log("Vesrion : " + require("./package.json").version)
-  );
-}
+
 fs.readdirSync("./lib/database/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
     require("./lib/database/" + plugin);
@@ -38,7 +33,7 @@ async function Xasena() {
   await config.DATABASE.sync();
 
 const { state, saveState } = await useSingleFileAuthState(
-    "./media/session.json",
+    "./session.json",
     pino({ level: "silent" })
   )
   let conn = makeWASocket({

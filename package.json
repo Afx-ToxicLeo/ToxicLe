@@ -1,6 +1,6 @@
 {
   "name": "ToxicLeo",
-  "version": "3.0.0",
+  "version": "2.0.0",
   "description": "Toxic-Leo is a simple whatsApp Bot.",
   "main": "./bot.js",
   "scripts": {

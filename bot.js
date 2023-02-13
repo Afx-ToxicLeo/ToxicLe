@@ -1,4 +1,3 @@
-
 const {
   default: makeWASocket,
   Browsers,
@@ -72,7 +71,7 @@ const { state, saveCreds } = await useMultiFileAuthState(
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
       console.log("Toxic Leo");
-      console.log(" Connecting to WhatsApp... Please Wait. ");
+      console.log(" TOXIC LEO Connecting to WhatsApp... Please Wait. ");
     }
 
     if (
@@ -111,8 +110,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
           require("./plugins/" + plugin);
         }
       });
-      console.log(" *Plugins Installed!* ");
-      let str = `\`\`\` ▰▰▰▱ 100% Connected *𝚃𝚘𝚡𝚒𝚌 𝙻𝚎𝚘* \nversion : ${
+      console.log(" Plugins Installed! ");
+      let str = `\`\`\` ▰▰▰▱ 100% Connected Toxic Leo📮 \nversion : ${
         require("./package.json").version
       }\nTotal Plugins : ${events.commands.length}\nMode: ${
         config.WORK_TYPE

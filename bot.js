@@ -10,6 +10,7 @@ const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
 const pino = require("pino");
 const path = require("path");
+const Config = require('./config');
 const events = require("./lib/event");
 const got = require("got");
 const config = require("./config");

@@ -3,7 +3,7 @@ const {
   default: makeWASocket,
   Browsers,
   makeInMemoryStore,
-  useSingleFileAuthState,
+  useMultiFileAuthState,
 } = require("@adiwajshing/baileys");
 const fs = require("fs");
 const { serialize } = require("./lib/serialize");
@@ -28,12 +28,23 @@ fs.readdirSync("./lib/database/").forEach((plugin) => {
   }
 });
 
+const aes256 = require('aes256');
+let plaintext = Config.SESSION_ID.replaceAll("inrl~", "");
+let key = 'k!t';
+let decryptedPlainText = aes256.decrypt(key, plaintext);
+  async function md(){
+   let {body} = await got(`https://inrl-web.vercel.app/api/session?id=${decryptedPlainText}`)
+  let result = JSON.parse(body).result[0].data;
+fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
+   }
+  md();
+
 async function Xasena() {
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
-const { state, saveState } = await useSingleFileAuthState(
-    "./session.json",
+const { state, saveState } = await useMultiFileAuthState(
+    "./lib/auth_info_baileys/creds.json",
     pino({ level: "silent" })
   )
   let conn = makeWASocket({
@@ -180,4 +191,4 @@ const { state, saveState } = await useSingleFileAuthState(
 }
 setTimeout(() => {
   Xasena();
-}, 3000);
+}, 7000);

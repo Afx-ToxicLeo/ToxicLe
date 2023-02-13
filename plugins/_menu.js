@@ -7,7 +7,7 @@ command(
   {
     pattern: "menu",
     fromMe: isPrivate,
-    desc: " *sʜᴏᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs* ",
+    desc: " *Show All Commands* ",
     dontAddCommandList: true,
   },
   async (message, match) => {
@@ -24,16 +24,31 @@ Description : ${i.desc}\`\`\``
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `❖━━━━━[ *${BOT_NAME}* ]━━━━━❖
- x *Owner* :  x-electra
- x *Prefix* : ${prefix}
- x *Hostname* :${hostname()}
- x *Date* : ${date}
- x *Time* : ${time}
- x *Commands* : ${events.commands.length} 
- x *Uptime* : ${clockString(uptime())} 
+      let menu = `❏ *${BOT_NAME}* 
+```
+• .img
+• .song
+• .kick
+• .mp3
+• .insta 
+• .jid
+• .removebg
+• .add
+• .vv
+• .tagall
+• .fancy
+• .sticker
+• .video
+• .mute
+• .unmute
+• .ping
+• .dlt
+• .photo
+• .block
+• .unblock
 
-╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾╼\n╽`;
+© Toxic
+````;
       let cmnd = [];
       let cmd;
       let category = [];
@@ -59,15 +74,15 @@ Description : ${i.desc}\`\`\``
       });
       cmnd.sort();
       category.sort().forEach((cmmd) => {
-        menu += `\n┠─────〔${cmmd}〕\n╿\n╿╭╼╾╼╾╼╾╼╾╼╾╼╾╼╾╼`;
+        menu += `\n〔${cmmd}〕\n\n`;
         let comad = cmnd.filter(({ type }) => type == cmmd);
         comad.forEach(({ cmd }, num) => {
-          menu += `\n╿┠ ${cmd.trim()}`;
+          menu += `\n ${cmd.trim()}`;
         });
-        menu += `\n╿╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾╼\n╿`;
+        menu += `\n\n`;
       });
 
-      menu += `\n╰╼╾╼╾╼╾╼╾╼╾╼╾╼╾╼╾╼`;
+      menu += `\n`;
  
 
 
@@ -98,11 +113,11 @@ command(
   {
     pattern: "list",
     fromMe: isPrivate,
-    desc: " *sʜᴏᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs* ",
+    desc: " *Show All Commands* ",
     dontAddCommandList: true,
   },
   async (message, match, { prefix }) => {
-    let menu = `╭───〔 ${tiny("x-Asena command list")} 〕────\n`;
+    let menu = `〔 ${tiny("x-Asena command list")} \n`;
 
     let cmnd = [];
     let cmd, desc;
@@ -126,7 +141,7 @@ command(
       menu += `├ ${(num += 1)} *${tiny(cmd.trim())}*\n`;
       if (desc) menu += `├ ${tiny("use : " + desc)}\n`;
     });
-    menu += `╰──────────────────────────`;
+    menu += ``;
     return await message.reply(menu);
   }
 );

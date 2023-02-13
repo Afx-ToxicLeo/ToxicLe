@@ -44,8 +44,8 @@ async function Xasena() {
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
-const { state, saveState } = await useMultiFileAuthState(
-    "./lib/auth_info_baileys/creds.json",
+const { state, saveCreds } = await useMultiFileAuthState(
+    "./lib/auth_info_baileys/",
     pino({ level: "silent" })
   )
   let conn = makeWASocket({
@@ -66,7 +66,7 @@ const { state, saveState } = await useMultiFileAuthState(
     store.writeToFile("./database/store.json");
   }, 30 * 60 * 1000);
 
- conn.ev.on("creds.update", saveState);
+ conn.ev.on("creds.update", saveCreds);
 
   conn.ev.on("connection.update", async (s) => {
     const { connection, lastDisconnect } = s;

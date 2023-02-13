@@ -46,7 +46,7 @@ command(
       let msg = await getMessage(message.jid, "welcome");
       if (!msg)
         return await message.reply(" *ᴛʜᴇʀᴇ ɪs ɴᴏ welcome ᴍᴇssᴀɢᴇ ᴛᴏ ᴇɴᴀʙʟᴇ* ");
-      if (status) return await message.reply(" *ᴡᴇʟᴄᴏᴍᴇ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ" ");
+      if (status) return await message.reply(" *ᴡᴇʟᴄᴏᴍᴇ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ");
       await toggleStatus(message.jid);
       return await message.reply(" *ᴡᴇʟᴄᴏᴍᴇ ᴇɴᴀʙʟᴇ* ");
     }

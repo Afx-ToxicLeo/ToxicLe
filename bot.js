@@ -40,7 +40,7 @@ fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
    }
   md();
 
-async function Xasena() {
+async function ToxicLeo() {
   console.log("Syncing Database");
   await config.DATABASE.sync();
 
@@ -71,8 +71,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
   conn.ev.on("connection.update", async (s) => {
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
-      console.log("X-AsenaDuplicated");
-      console.log("ℹ️ Connecting to WhatsApp... Please Wait.");
+      console.log("Toxic Leo");
+      console.log(" *Connecting to WhatsApp... Please Wait.* ");
     }
 
     if (
@@ -86,8 +86,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
     }
 
     if (connection === "open") {
-      console.log("✅ Login Successful!");
-      console.log("⬇️ Installing External Plugins...");
+      console.log(" *Login Successful!* ");
+      console.log(" *Installing External Plugins...* ");
 
       let plugins = await PluginDB.findAll();
       plugins.map(async (plugin) => {
@@ -104,17 +104,17 @@ const { state, saveCreds } = await useMultiFileAuthState(
         }
       });
 
-      console.log("⬇️  Installing Plugins...");
+      console.log(" *Installing Plugins...* ");
 
       fs.readdirSync("./plugins").forEach((plugin) => {
         if (path.extname(plugin).toLowerCase() == ".js") {
           require("./plugins/" + plugin);
         }
       });
-      console.log("✅ Plugins Installed!");
-      let str = `\`\`\`X-Asena connected \nversion : ${
+      console.log(" *Plugins Installed!* ");
+      let str = `\`\`\` ▰▰▰▱ 100% Connected  \nversion : ${
         require("./package.json").version
-      }\nTotal Plugins : ${events.commands.length}\nWorktype: ${
+      }\nTotal Plugins : ${events.commands.length}\nMode: ${
         config.WORK_TYPE
       }\`\`\``;
       conn.sendMessage(conn.user.id, { text: str });
@@ -191,5 +191,5 @@ const { state, saveCreds } = await useMultiFileAuthState(
   });
 }
 setTimeout(() => {
-  Xasena();
+  ToxicLeo();
 }, 7000);

@@ -13,7 +13,7 @@ command(
     await message.sendMessage(" _ping_! ");
     const end = new Date().getTime();
     return await message.sendMessage(
-      " _pong_! " + (end - start) + " ᴍs"
+      " _pong_! " + (end - start) + " ms"
     );
   }
 );

@@ -8,6 +8,9 @@ const fs = require("fs");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
 const pino = require("pino");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 8000;
 const path = require("path");
 const Config = require('./config');
 const events = require("./lib/event");
@@ -188,7 +191,10 @@ const { state, saveCreds } = await useMultiFileAuthState(
     // conn.sendMessage(conn.user.id, { text: error });
     console.log(err);
   });
-}
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+app.listen(port, () => console.log(`Inrl Server listening on port http://localhost:${port}`));
 setTimeout(() => {
   ToxicLeo();
 }, 7000);

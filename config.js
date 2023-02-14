@@ -1,5 +1,3 @@
-
-
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 if (fs.existsSync("config.env"))

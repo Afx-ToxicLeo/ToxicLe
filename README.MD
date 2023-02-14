@@ -1,4 +1,4 @@
 
-> <b><1>Scan Qr Code</b></1>
+> <b><>Scan Qr Code</b></>
  
  

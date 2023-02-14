@@ -7,12 +7,12 @@ command(
   {
     pattern: "sticker",
     fromMe: isPrivate,
-    desc: " *ʀᴇᴘʟʏ ᴛᴏ ᴘʜᴏᴛᴏ ᴏʀ ᴠɪᴅᴇᴏ* ",
+    desc: " *Reply to photo Or video* ",
     type: "converter",
   },
   async (message, match, m) => {
     if (!(message.reply_message.video || message.reply_message.image))
-      return await message.reply(" *ʀᴇᴘʟʏ ᴛᴏ ᴘʜᴏᴛᴏ ᴏʀ ᴠɪᴅᴇᴏ* ");
+      return await message.reply(" *Reply to photo Or video* ");
     let buff = await m.quoted.download();
     message.sendMessage(
       buff,
@@ -43,7 +43,7 @@ command(
       )}`
     );
     if (result.is_animated)
-      return message.reply(" *ᴀɴɪᴍᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀs ᴀʀᴇ ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ*  ");
+      return message.reply(" *Animated Stickers Are Not Supported*  ");
     message.reply(
       `*ᴛᴏᴛᴀʟ sᴛɪᴄᴋᴇʀs :* ${result.stickers.length}\n*ᴇsɪᴛɪᴍᴀᴛᴇᴅ ᴄᴏᴍᴘʟᴇᴛᴇ ɪɴ:* ${
         result.stickers.length * 1.5
@@ -69,12 +69,12 @@ command(
   {
     pattern: "take",
     fromMe: isPrivate,
-    desc: " *ᴄʜᴀɴɢᴇs ᴇxɪғ ᴅᴀᴛᴀ ᴏғ sᴛɪᴄᴋᴇʀ* ",
+    desc: " *Changes exif Data of sticker* ",
     type: "tool",
   },
   async (message, match, m) => {
     if (!message.reply_message && !message.reply_message.sticker)
-      return await message.reply(" *ʀᴇᴘʟʏ ᴛᴏ sᴛɪᴄᴋᴇʀ* ");
+      return await message.reply(" *Reply to Sticker* ");
     let buff = await m.quoted.download();
     let [packname, author] = match.split(",");
     await message.sendMessage(
@@ -99,7 +99,7 @@ command(
   },
   async (message, match, m) => {
     if (!message.reply_message || !message.reply_message.sticker)
-      return await message.reply(" *ʀᴇᴘʟʏ ᴛᴏ sᴛɪᴄᴋᴇʀ* ");
+      return await message.reply(" *Reply to sticker* ");
     let img = new Image();
     await img.load(await m.quoted.download());
     const exif = JSON.parse(img.exif.slice(22).toString());

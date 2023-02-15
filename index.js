@@ -73,8 +73,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
   conn.ev.on("connection.update", async (s) => {
     const { connection, lastDisconnect } = s;
     if (connection === "connecting") {
-      console.log("Toxic Leo");
-      console.log(" TOXIC LEO Connecting to WhatsApp... Please Wait. ");
+      console.log("Toxic Leo MD");
+      console.log(" ♻ Toxic leo Connecting to WhatsApp... Please Wait. ");
     }
 
     if (
@@ -88,8 +88,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
     }
 
     if (connection === "open") {
-      console.log(" *Login Successful!* ");
-      console.log(" Installing External Plugins... ");
+      console.log(" Login Successful! ✓ ");
+      console.log(" ❗Installing External Plugins... ");
 
       let plugins = await PluginDB.findAll();
       plugins.map(async (plugin) => {
@@ -114,7 +114,7 @@ const { state, saveCreds } = await useMultiFileAuthState(
         }
       });
       console.log(" Plugins Installed! ");
-      let str = `\`\`\` ▰▰▰▱ 100% Connected Toxic Leo📮 \nversion : ${
+      let str = `\`\`\` тσ𝚡𝚒𝚌 ℓєσ ѕтαятє∂📮 \nversion : ${
         require("./package.json").version
       }\nTotal Plugins : ${events.commands.length}\nMode: ${
         config.WORK_TYPE

@@ -191,6 +191,7 @@ const { state, saveCreds } = await useMultiFileAuthState(
     // conn.sendMessage(conn.user.id, { text: error });
     console.log(err);
   });
+}
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });

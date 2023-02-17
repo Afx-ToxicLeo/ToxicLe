@@ -9,10 +9,8 @@
 <br><a href='https://app.koyeb.com/auth/signup' target="_blank"><img alt='koyeb' src='https://img.shields.io/badge/-Create-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>
 
 
- > <b><s1> 3. Now Deploy</b></s1>
+> <b><s1> 3. Now Deploy</b></s1>
     <br>
-
-
 <a href='https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
 ***
 

@@ -11,9 +11,8 @@
 
  > <b><s1> 3. Now Deploy</b></s1>
     <br>
-<[Click here to deploy on Koyeb](https://app.koyeb.com/apps/deploy?type=docker&image=http://quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD)
-<br>' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY TO KOYEB-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
-**
 
 
+<a href='https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
+***
 

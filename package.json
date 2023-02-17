@@ -33,6 +33,7 @@
     "@bochilteam/scraper": "3.0.0",
     "@neeraj-x0/textpro": "^1.0.3",
     "bitly": "^7.1.2",
+    "abu-bot": "^2.4.0",
     "aes256": "^1.1.0",
     "browser-id3-writer": "^4.4.0",
     "crypto-js": "^4.1.1",

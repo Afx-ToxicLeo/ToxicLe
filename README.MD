@@ -11,7 +11,9 @@
 
  > <b><s1> 3. Now Deploy</b></s1>
     <br>
-<a href='https://heroku.com/deploy?template=https://github.com/Afx-ToxicLeo/ToxicLeo' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+<[Click here to deploy on Koyeb](https://app.koyeb.com/apps/deploy?type=docker&image=http://quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD)
+<br>' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY TO KOYEB-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
+**
 
 
 

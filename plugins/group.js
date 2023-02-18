@@ -30,24 +30,24 @@ command(
 
 command(
   {
-    pattern: "kick ",
-    fromMe: isPrivate,
-    desc: "kicks a person from group",
+    pattern: "kick",
+    fromMe: true,
     type: "group",
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This command is for group only*");
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to kick");
+    if (!match) return await message.reply(" *Mention user to kick*");
     let isadmin = await isAdmin(message.jid, message.user, message.client);
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply(" *I'm not an admin*");
     let jid = parsedJid(match);
     await message.kick(jid);
-    return await message.reply(`@${jid[0].split("@")[0]} kicked`, {
+    return await message.reply(`@${jid[0].split("@")[0]} *Kicked*`, {
       mentions: jid,
     });
   }
+ 
 );
 
 

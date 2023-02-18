@@ -53,21 +53,20 @@ command(
 
 command(
   {
-    pattern: "promote ",
+    pattern: "promote",
     fromMe: isPrivate,
-    desc: "promote a member",
     type: "group",
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This Command is for group Only*");
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to promote_");
+    if (!match) return await message.reply(" *Mention user to Promote*");
     let isadmin = await isAdmin(message.jid, message.user, message.client);
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply(" *I'm not an Admin*");
     let jid = parsedJid(match);
     await message.promote(jid);
-    return await message.reply(`@${jid[0].split("@")[0]} promoted as admin`, {
+    return await message.reply(`@${jid[0].split("@")[0]} *Promoted As Admin*`, {
       mentions: jid,
     });
   }

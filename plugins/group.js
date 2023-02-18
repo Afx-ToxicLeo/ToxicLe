@@ -75,21 +75,20 @@ command(
 
 command(
   {
-    pattern: "demote ",
+    pattern: "demote",
     fromMe: isPrivate,
-    desc: "demote a member",
     type: "group",
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This Command is for group Only*");
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to demote");
+    if (!match) return await message.reply(" *Mention user to Demote*");
     let isadmin = await isAdmin(message.jid, message.user, message.client);
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply(" *I'm not an Admin*");
     let jid = parsedJid(match);
     await message.demote(jid);
-    return await message.reply(`@${jid[0].split("@")[0]} demoted from admin`, {
+    return await message.reply(`@${jid[0].split("@")[0]} *Demoted from Admin*`, {
       mentions: jid,
     });
   }

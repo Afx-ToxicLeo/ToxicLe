@@ -100,15 +100,15 @@ command(
   {
     pattern: "mute",
     fromMe: true,
-    desc: "nute group",
+    desc: "mute group",
     type: "group",
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This command is for groups*");
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
-    await message.reply("_Muting_");
+      return await message.reply(" *I'm not admin*");
+    await message.reply(" *Muting*");
     return await client.groupSettingUpdate(message.jid, "announcement");
   }
 );
@@ -124,10 +124,10 @@ command(
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This command is for groups*");
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
-    await message.reply("_Unmuting_");
+      return await message.reply(" *I'm not admin*");
+    await message.reply(" *Unmuting*");
     return await client.groupSettingUpdate(message.jid, "not_announcement");
   }
 );
@@ -142,18 +142,18 @@ command(
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
-    if (!match) return message.reply("_Enter time to mute_\nEg : amute 20:10");
+      return await message.reply(" *This command is for groups*");
+    if (!match) return message.reply(" *Enter time to mute*\nEg : *amute 20:10*");
 
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
-    message.reply(`_Group will mute at ${match}_`);
+      return await message.reply(" *I'm not admin*");
+    message.reply(` *Group will mute at ${match}*`);
     await saveSchedule(message.jid, match, async () => {
-      await message.reply("_Muting_");
+      await message.reply(" *Muting*");
       return await client.groupSettingUpdate(message.jid, "announcement");
     });
     return cron(match, async () => {
-      await message.reply("_Muting_");
+      await message.reply(" *Muting*");
       return await client.groupSettingUpdate(message.jid, "announcement");
     });
   }
@@ -169,20 +169,20 @@ command(
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This command is for groups*");
     if (!match)
-      return message.reply("_Enter time to unmute_\nEg : aunmute 20:10");
+      return message.reply(" *Enter time to unmute*\nEg : *aunmute 20:10*");
 
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
-    message.reply(`_Group will unmute at ${match}_`);
+      return await message.reply(" *I'm not admin*");
+    message.reply(` *Group will unmute at ${match}*`);
     await saveSchedule(message.jid, match, async () => {
-      await message.reply("_Auto Unmuting_");
-      return await client.groupSettingUpdate(message.jid, "not_announcement");
+      await message.reply(" *Auto Unmuting*");
+      return await client.groupSettingUpdate(message.jid, " *not_announcement*");
     });
     return cron(match, async () => {
-      await message.reply("_Auto Unmuting_");
-      return await client.groupSettingUpdate(message.jid, "not_announcement");
+      await message.reply(" *Auto Unmuting*");
+      return await client.groupSettingUpdate(message.jid, " *not_announcement*");
     });
   }
 );
@@ -197,7 +197,7 @@ command(
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply(" *This command is for groups*");
     let { participants } = await client.groupMetadata(message.jid);
     let participant = participants.map((u) => u.id);
     let str = "╭──〔 *Group Jids* 〕\n";
@@ -229,11 +229,8 @@ command(
     });
   }
 );
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
+
 
 command(
   {
@@ -288,14 +285,7 @@ command(
   }
 );
 
-/**
- * antilink
- */
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -306,7 +296,7 @@ command(
     if (!message.isGroup) return;
     if (config.ANTILINK)
       if (isUrl(match)) {
-        await message.reply("_Link detected_");
+        await message.reply(" *Link detected❗*");
         let botadmin = await isAdmin(message.jid, message.user, message.client);
         let senderadmin = await isAdmin(
           message.jid,
@@ -321,7 +311,7 @@ command(
             return await message[config.ANTILINK_ACTION]([message.participant]);
           }
         } else {
-          return await message.reply("_I'm not admin_");
+          return await message.reply(" *I'm not am Admin*);
         }
       }
   }

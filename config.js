@@ -19,7 +19,7 @@ module.exports = {
       : "^[,]",
   RMBG_KEY: process.env.RMBG_KEY || false,
   BRANCH: "master",
-  PACKNAME: process.env.PACKNAME || "𝚃𝚘𝚡𝚒𝚌 𝙻𝚎𝚘",
+  PACKNAME: process.env.PACKNAME || "Toxic Leo",
   WELCOME_MSG:
     process.env.WELCOME_MSG ||
     "Hi @user Welcome to @gname",

@@ -306,12 +306,12 @@ command(
         if (botadmin) {
           if (!senderadmin) {
             await message.reply(
-              `_Commencing Specified Action :${config.ANTILINK_ACTION}_`
+              `;*Commencing Specified Action* :${config.ANTILINK_ACTION}_`
             );
             return await message[config.ANTILINK_ACTION]([message.participant]);
           }
         } else {
-          return await message.reply(" *I'm not am Admin*);
+          return await message.reply(" *I'm not am Admin*");
         }
       }
   }

@@ -186,7 +186,7 @@ command(
 command(
   {
     pattern: "mp3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "converts video/voice to mp3",
     type: "downloader",
   },
@@ -194,7 +194,7 @@ command(
     //if(message.reply_message.text) return await message.reply(' *Enter Video Name*')
     let buff = await m.quoted.download();
     buff = await toAudio(buff, "mp3");
-    return await message.sendMessage(buff, { mimetype: "audio/mpeg" }, "audio");
+    return await message.sendMessage(buff, { mimetype: "audio/mpeg", quoted: message }, "audio");
   }
 );
 

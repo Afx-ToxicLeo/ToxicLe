@@ -17,9 +17,9 @@
 
 > <b><s1>ᴘʀᴇᴠɪᴇᴡ ʙᴏᴛ</b></s1> 
 
-- [x] ᴍᴇɴᴜ <details><summary>Screenshot</summary><img src="https://telegra.ph/file/e7adc19143c17cebece3c.jpg"></details>
-- [x] ғᴏʀᴡᴀʀᴅ <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
-- [x] ᴍᴇɴᴛɪᴏɴ <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
+- [x] ᴍᴇɴᴜ <details><summary>Screenshot</summary><img src="https://i.imgur.com/iUDscYU.jpeg"></details>
+- [x] ғᴏʀᴡᴀʀᴅ <details><summary>Screenshot</summary><img src="https://i.imgur.com/eZa6pCh.jpeg"></details>
+- [x] ᴍᴇɴᴛɪᴏɴ <details><summary>Screenshot</summary><img src="https://i.imgur.com/H5KDN1A.jpeg"></details>
 
 
 

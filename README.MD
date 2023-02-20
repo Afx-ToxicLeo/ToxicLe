@@ -1,7 +1,7 @@
 ## ```𝑻𝒐𝒙𝒊𝒄 𝑳𝒆𝒐```
 
 
- > <b><s1>1.sᴄᴀɴ ǫʀ ᴄᴏᴅᴇ </b></s1> 
+  > <b><s1>1.sᴄᴀɴ ǫʀ ᴄᴏᴅᴇ </b></s1> 
 
 <a href='https://B-oR.akashleo1.repl.co' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 

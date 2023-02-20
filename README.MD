@@ -25,4 +25,4 @@
 * [`Abu`](https://github.com/Afx-Abu)
 * [`Inrl`](https://github.com/inrl-official)
 
-> <b><s1>1.Thanks to all who have participated in the development of this script </b></s1>
+> <b><s1>.Thanks to all who have participated in the development of this script </b></s1>

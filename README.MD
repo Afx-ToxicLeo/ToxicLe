@@ -22,8 +22,8 @@
 
 
 ## Thanks To
-* [`ᴀʙᴜ`](https://github.com/adiwajshing/baileys)
-* [`ɪɴʀʟ`](https://github.com/Nurutomo)
-* [`ɴᴇᴇʀᴀᴊ`](https://github.com/MhankBarBar)
+* [`ABU`](https://github.com/adiwajshing/baileys)
+* [`INRL`](https://github.com/Nurutomo)
+* [`NEERAJ`](https://github.com/MhankBarBar)
 
 ```Thanks to all who have participated in the development of this script```

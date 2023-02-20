@@ -15,3 +15,15 @@
 <a href='https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
 ***
 
+
+
+
+
+
+
+## Thanks To
+* [`ᴀʙᴜ`](https://github.com/adiwajshing/baileys)
+* [`ɪɴʀʟ`](https://github.com/Nurutomo)
+* [`ɴᴇᴇʀᴀᴊ`](https://github.com/MhankBarBar)
+
+```Thanks to all who have participated in the development of this script```

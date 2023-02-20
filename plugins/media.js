@@ -26,11 +26,7 @@ const stream = require("stream");
 const { promisify } = require("util");
 const pipeline = promisify(stream.pipeline);
 const fs = require("fs");
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 
 
@@ -42,11 +38,11 @@ Function(
     type: "downloader",
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("Enter Search Term,number");
+    if (!match) return await message.sendMessage(" *Need Query*! *Example: .img messi || .img query,conut*");
     let [query, amount] = match.split(",");
     let result = await gimage(query, amount);
     await message.sendMessage(
-      `_Downloading ${amount || 5} images for ${query}_`
+      ` *Downloading ${amount || 5} images for ${query}*`
     );
     for (let i of result) {
       await message.sendFromUrl(i);
@@ -70,24 +66,7 @@ async function gimage(query, amount = 5) {
   });
 }
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
-
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   {
@@ -98,19 +77,15 @@ command(
   },
   async (message, match, m) => {
     if (!message.reply_message)
-      return await message.reply("_Reply to a sticker_");
+      return await message.reply(" *Reply to a sticker*");
     if (message.reply_message.mtype !== "stickerMessage")
-      return await message.reply("_Not a sticker_");
+      return await message.reply(" *Not a sticker*");
     let buff = await m.quoted.download();
     return await message.sendMessage(buff, {}, "image");
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -121,20 +96,16 @@ command(
   },
   async (message, match, m) => {
     if (!message.reply_message)
-      return await message.reply("_Reply to a sticker_");
+      return await message.reply(" *Reply to a sticker*");
     if (message.reply_message.mtype !== "stickerMessage")
-      return await message.reply("_Not a sticker_");
+      return await message.reply(" *Not a sticker*");
     let buff = await m.quoted.download();
     let buffer = await webp2mp4(buff);
     return await message.sendMessage(buffer, {}, "video");
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -145,7 +116,7 @@ command(
   },
   async (message, match) => {
     if (!(match || message.reply_message.text))
-      return await message.reply("_Enter Song Name_");
+      return await message.reply(" *Enter Song Name*");
     match = match || message.reply_message.text;
     if (ytIdRegex.test(match)) {
       yta(match.trim()).then(async ({ dl_link, title, thumb }) => {
@@ -161,7 +132,7 @@ command(
       });
     }
     search(match + "song").then(async ({ videos }) => {
-      await message.reply(`_Downloading ${videos[0].title}_`);
+      await message.reply(` *Downloading ${videos[0].title}*`);
       let a = videos[0].url
     //  let b = a.url
       await message.reply(`${a}`)
@@ -181,11 +152,7 @@ command(
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -196,7 +163,7 @@ command(
   },
   async (message, match) => {
   //  if (!match || !message.reply_message.text)
-   //   return await message.reply("_Enter Video Name_");
+   //   return await message.reply(" *Enter Video Name*");
     match = match || message.reply_message.text;
     if (ytIdRegex.test(match)) {
       ytv(match.trim()).then(({ dl_link, title }) => {
@@ -204,7 +171,7 @@ command(
       });
     }
     search(match).then(async ({ videos }) => {
-      await message.reply(`_Downloading ${videos[0].title}_`);
+      await message.reply(` *Downloading ${videos[0].title}*`);
       ytv(videos[0].url).then(({ dl_link, title }) => {
         message.sendFromUrl(dl_link, { filename: title, quoted: message });
       });
@@ -214,11 +181,7 @@ command(
 
 
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -228,17 +191,13 @@ command(
     type: "downloader",
   },
   async (message, match, m) => {
-    //if(message.reply_message.text) return await message.reply('_Enter Video Name_')
+    //if(message.reply_message.text) return await message.reply(' *Enter Video Name*')
     let buff = await m.quoted.download();
     buff = await toAudio(buff, "mp3");
     return await message.sendMessage(buff, { mimetype: "audio/mpeg" }, "audio");
   }
 );
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -251,7 +210,7 @@ command(
     match = match || message.reply_message.text;
     if (!match)
       return message.reply(
-        "_Send a direct media link_\n_*link;caption(optional)*_"
+        " *Send a direct media link*\n_*link;caption(optional)*_"
       );
     try {
       let url = match.split(";")[0];
@@ -261,19 +220,15 @@ command(
       if (isUrl(url)) {
         message.sendFromUrl(url, options);
       } else {
-        message.reply("_Not a URL_");
+        message.reply(" *Not a URL*");
       }
     } catch (e) {
       console.log(e);
-      message.reply("_No content found_");
+      message.reply(" *No content found*");
     }
   }
 );
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 
 //message.reply_message.text
@@ -285,7 +240,7 @@ command(
     type: "downloader",
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("ᴇɴᴛᴇʀ ʟɪɴᴋ");
+    if (!match) return await message.sendMessage(" *Enter Link*");
    // match = match || message.reply_message.text;
     
     if (!match.includes("instagram.com"))
@@ -293,7 +248,7 @@ command(
     let response = await getJson(
       `https://x-asena-api.up.railway.app/ig?q=${match}`
     );
-    try { message.sendFromUrl(response.result[1].url); } catch { message.sendMessage("ᴏᴏᴘs !! sᴏᴍᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ 🥴"); }
+    try { message.sendFromUrl(response.result[1].url); } catch { message.sendMessage(" *Something went wrong, Please try again!*"); }
   }
 );
 
@@ -305,7 +260,7 @@ command(
     type: "Search",
   },
   async (message, match) => {
-    if (!match) return await message.reply("_Enter a search term_");
+    if (!match) return await message.reply("*Enter a search term*");
     let rows = [];
     search(match).then(async ({ videos }) => {
       videos.forEach((result) => {
@@ -333,11 +288,6 @@ command(
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   {
@@ -347,11 +297,11 @@ command(
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    if (!match) return await message.reply("_Enter a URL_");
+    if (!match) return await message.reply(" *Enter a URL*");
 
     if (!ytIdRegex.test(match)) return await message.reply("_Invalid Url_");
     ytv(match).then(async ({ dl_link, title }) => {
-      await message.reply(`_Downloading ${title}_`);
+      await message.reply(` *Downloading ${title}*`);
       return await message.sendFromUrl(dl_link, {
         filename: title,
         quoted: message,
@@ -370,10 +320,10 @@ command(
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    if (!match) return await message.reply("_Enter a URL_");
+    if (!match) return await message.reply(" *Enter a URL*");
     if (!ytIdRegex.test(match)) return await message.reply("_Invalid Url_");
     yta(match).then(async ({ dl_link, title, thumb }) => {
-      await message.reply(`_Downloading ${title}_`);
+      await message.reply(` *Downloading ${title}*`);
       let buff = await AddMp3Meta(dl_link, thumb, {
         title,
       });

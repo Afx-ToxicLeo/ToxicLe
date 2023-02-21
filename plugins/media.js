@@ -186,7 +186,7 @@ command(
 command(
   {
     pattern: "mp3",
-    fromMe: isPublic,
+    fromMe: isPrivate,
     desc: "converts video/voice to mp3",
     type: "downloader",
   },

@@ -8,7 +8,7 @@ command(
   {
     pattern: "install ?(.*)",
     fromMe: true,
-    desc: " *ɪɴsᴛᴀʟʟ ᴇxᴛᴇʀɴᴀʟ ᴘʟᴜɢɪɴs* ",
+    desc: " *Install External Plugins* ",
     type:'user'
   },
   async (message, match) => {
@@ -17,7 +17,7 @@ command(
       try {
         var url = new URL(Url);
       } catch {
-        return await message.sendMessage(" *ɪɴᴠᴀʟɪᴅ ᴜʀʟ* ");
+        return await message.sendMessage(" *Invalid Url* ");
       }
 
       if (url.host === "gist.github.com") {
@@ -42,13 +42,13 @@ command(
           require("./" + plugin_name);
         } catch (e) {
           fs.unlinkSync("/ToxicLeo/plugins/" + plugin_name + ".js");
-          return await message.sendMessage(" *ɪɴᴠᴀʟɪᴅ ᴘʟᴜɢɪɴ* \n ```" + e + "```");
+          return await message.sendMessage(" *Invalid Plugin* \n ```" + e + "```");
         }
 
         await installPlugin(url, plugin_name);
 
         await message.sendMessage(
-          `*ɴᴇᴡ ᴘʟᴜɢɪɴ ɪɴsᴛᴀʟʟᴇᴅ* : ${commands.join(",")}_`
+          ` *New Plugin Installed* : ${commands.join(",")}_`
         );
       }
     }
@@ -57,12 +57,12 @@ command(
 
 
 command(
-  { pattern: "plugin", fromMe: true, desc: " *ᴘʟᴜɢɪɴ ʟɪsᴛ* " ,type:'user'},
+  { pattern: "plugin", fromMe: true, desc: " *Plugin List* " ,type:'user'},
   async (message, match) => {
     var mesaj = "";
     var plugins = await PluginDB.findAll();
     if (plugins.length < 1) {
-      return await message.sendMessage(" *ɴᴏ ᴇxᴛᴇʀɴᴀʟ ᴘʟᴜɢɪɴs ɪɴsᴛᴀʟʟᴇᴅ* ");
+      return await message.sendMessage(" *No External Plugins Installed* ");
     } else {
       plugins.map((plugin) => {
         mesaj +=
@@ -83,16 +83,16 @@ command(
   {
     pattern: "remove(?: |$)(.*)",
     fromMe: true,
-    desc: " *ʀᴇᴍᴏᴠᴇ ᴇxᴛᴇʀɴᴀʟ ᴘʟᴜɢɪɴs* ",
+    desc: " *Remove External Plugins* ",
     type:'user'
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage(" *ɴᴇᴇᴅ ᴀ ᴘʟᴜɢɪɴ ɴᴀᴍᴇ* ");
+    if (!match) return await message.sendMessage(" *Need a Plugin Name* ");
 
     var plugin = await PluginDB.findAll({ where: { name: match } });
 
     if (plugin.length < 1) {
-      return await message.sendMessage(" *ᴘʟᴜɢɪɴ ɴᴏᴛ ғᴏᴜɴᴅ* ");
+      return await message.sendMessage(" *Plugin Not Found* ");
     } else {
       await plugin[0].destroy();
       delete require.cache[require.resolve("./" + match + ".js")];

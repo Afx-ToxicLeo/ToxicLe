@@ -11,10 +11,8 @@
 
 > <b><s1> 3. ɴᴏᴡ ᴅᴇᴘʟᴏʏ</b></s1>
     <br>
-<a href='https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=privet&env[KOYEB_NAME]=ToxicLeo-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
+<a href='https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/akash_ak_4/toxicleo:latest&env[SESSION_ID]&env[WORKTYPE]=private&env[ANTI_LINK]&env[KOYEB_NAME]=Toxic LeoMD&env[HANDLER]=,&env[RMBG_KEY]&env[PACKNAME]=Toxic Leo&env[SUDO]=919497206865&env[BOT_NAME]=𝚃𝚘𝚡𝚒𝚡𝙻𝚎𝚘-𝙼𝙳&env[OWNER_NAME]=ToxicLeo' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
 ***
-
-
 > <b><s1>ᴘʀᴇᴠɪᴇᴡ ʙᴏᴛ</b></s1> 
 
 - [x] ᴍᴇɴᴜ <details><summary>Screenshot</summary><img src="https://i.imgur.com/iUDscYU.jpeg"></details>

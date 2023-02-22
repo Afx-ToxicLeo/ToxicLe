@@ -17,8 +17,7 @@ module.exports = {
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "inrl~7pL1J8UGHftwhE/P63aHSiUKkLAKaF+/ZJYnAg",
   LANG: process.env.LANG || "EN",
-  HANDLERS:
-    HANDLERS: process.env.PREFIX || '[.]',
+  HANDLERS: process.env.PREFIX || '[,]',
   RMBG_KEY: process.env.RMBG_KEY || false,
   BRANCH: "master",
   PACKNAME: process.env.PACKNAME || "Toxic Leo",

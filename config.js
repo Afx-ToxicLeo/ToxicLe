@@ -52,5 +52,5 @@ module.exports = {
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
   OWNER_NAME: process.env.OWNER_NAME || "ToxicLeo",
   BOT_NAME: process.env.BOT_NAME || "𝚃𝚘𝚡𝚒𝚡𝙻𝚎𝚘-𝙼𝙳",
-  WORK_TYPE: process.env.WORK_TYPE || "public",
+  WORK_TYPE: process.env.WORK_TYPE || "private",
 };

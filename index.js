@@ -114,7 +114,7 @@ const { state, saveCreds } = await useMultiFileAuthState(
         }
       });
       console.log(" Plugins Installed! ");
-      let str = `\`\`\` *ʟᴇᴏ ᴍᴅ sᴛᴀʀᴛᴇᴅ* \nversion : ${
+      let str = `\`\`\` Toxic MD started ❗ \nversion : ${
         require("./package.json").version
       }\nTotal Plugins : ${events.commands.length}\nMode: ${
         config.WORK_TYPE

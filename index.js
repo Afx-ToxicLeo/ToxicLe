@@ -32,7 +32,7 @@ fs.readdirSync("./lib/database/").forEach((plugin) => {
 });
 
 const aes256 = require('aes256');
-let plaintext = Config.SESSION_ID.replaceAll("inrl~", "");
+let plaintext = Config.SESSION_ID.replaceAll("ToxicLeo~", "");
 let key = 'k!t';
 let decryptedPlainText = aes256.decrypt(key, plaintext);
   async function md(){

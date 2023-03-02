@@ -45,7 +45,7 @@ module.exports = {
           },
           logging: false,
         }),
-  SUDO: process.env.SUDO || "919497206865,917306109518",
+  SUDO: process.env.SUDO || "919497206865",
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
   OWNER_NAME: process.env.OWNER_NAME || "ToxicLeo",

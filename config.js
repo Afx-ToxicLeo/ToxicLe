@@ -18,7 +18,7 @@ module.exports = {
   SESSION_ID:process.env.SESSION_ID || "inrl~7pL1J8UGHftwhE/P63aHSiUKkLAKaF+/ZJYnAg",
   LANG: process.env.LANG || "EN",
   HANDLERS: process.env.PREFIX || '[.]',
-  BOT_INFO : "ToxicLeo,𝚃𝚘𝚡𝚒𝚡𝙻𝚎𝚘-𝙼𝙳,https://i.imgur.com/bk3EKWZ.jpeg,https://i.imgur.com/bk3EKWZ.jpeg",
+  BOT_INFO : "ToxicLeo,ᴛᴏxɪᴄʟᴇᴏ,https://i.imgur.com/bk3EKWZ.jpeg,https://i.imgur.com/bk3EKWZ.jpeg",
   RMBG_KEY: process.env.RMBG_KEY || false,
   BRANCH: "master",
   PACKNAME: process.env.PACKNAME || "Toxic Leo",
@@ -49,6 +49,6 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
   OWNER_NAME: process.env.OWNER_NAME || "ᴛᴏxɪᴄʟᴇᴏ-ᴍᴅ",
-  BOT_NAME: process.env.BOT_NAME || "𝚃𝚘𝚡𝚒𝚡𝙻𝚎𝚘-𝙼𝙳",
+  BOT_NAME: process.env.BOT_NAME || "ᴛᴏxɪᴄʟᴇᴏ",
   WORK_TYPE: process.env.WORK_TYPE || "private",
 };

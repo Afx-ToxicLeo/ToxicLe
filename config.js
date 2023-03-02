@@ -1,5 +1,5 @@
-/* Copyright (C) 2023 toxic Leo
-edited by Leo
+/* ᴄᴏᴘʏʀɪɢʜᴛ  (C) 2023 ᴛᴏxɪ ʟᴇᴏ
+ᴇᴅɪᴛᴇᴅ ʙʏ ʟᴇᴏ
 */
 
 const { Sequelize } = require("sequelize");

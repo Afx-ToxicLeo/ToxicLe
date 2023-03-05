@@ -4,25 +4,24 @@ const { Image } = require("node-webpmux");
 
 
 command(
-  {
+   {
     pattern: "sticker",
     fromMe: isPrivate,
-    desc: " *Reply to photo Or video* ",
+    desc: "_Converts Photo or video to sticker_",
     type: "converter",
   },
   async (message, match, m) => {
     if (!(message.reply_message.video || message.reply_message.image))
-      return await message.reply(" *Reply to photo Or video* ");
+      return await message.reply(" *Reply to photo or video*");
     let buff = await m.quoted.download();
     message.sendMessage(
       buff,
-      { packname: config.PACKNAME, author: config.AUTHOR },
+      { packname: message.pushName, quoted: message },
       "sticker"
     );
   }
 );
-
-
+    
 
 command(
   {

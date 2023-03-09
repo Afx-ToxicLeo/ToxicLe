@@ -8,11 +8,11 @@ command(
   {
     pattern: "install ?(.*)",
     fromMe: true,
-    desc: " *Install External Plugins* ",
+    desc: " Install External Plugins ",
     type:'user'
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("_Send a plugin url_");
+    if (!match) return await message.sendMessage(" *Send a plugin url*");
     for (let Url of getUrl(match)) {
       try {
         var url = new URL(Url);
@@ -97,7 +97,7 @@ command(
       await plugin[0].destroy();
       delete require.cache[require.resolve("./" + match + ".js")];
       fs.unlinkSync("./plugins/" + match + ".js");
-      await message.sendMessage(` *ᴘʟᴜɢɪɴ ${match} deleted*`);
+      await message.sendMessage(` *plugin ${match} deleted*`);
     }
   }
 );

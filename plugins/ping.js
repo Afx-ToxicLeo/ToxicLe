@@ -10,10 +10,10 @@ command(
   },
   async (message, match) => {
     const start = new Date().getTime();
-    await message.sendMessage(" *ping!* ");
+    await message.sendMessage(" *Testing Speed!* ");
     const end = new Date().getTime();
     return await message.sendMessage(
-      " *pong!* " + (end - start) + " ms"
+      " *Response in !* " + (end - start) + " ms"
     );
   }
 );

@@ -27,7 +27,7 @@ command(
   async (message, match) => {
     if (!match) return await message.reply("_Enter name_");
     await message.updateName(match);
-    return await message.reply(`_Username Updated : ${match}_`);
+    return await message.reply(` *Username Updated : ${match}*`);
   }
 );
 

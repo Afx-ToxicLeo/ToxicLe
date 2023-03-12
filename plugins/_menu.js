@@ -145,3 +145,23 @@ command
 		)	
 	}
 );
+
+let categories = ['converter','downloader','game','group','heroku','tool','user','x-media','search','Textpro','Maker menu']
+let rows =[];
+for(i=0;i<categories.length;i++){
+  if([i]) rows.push({title: `${categories[i]}-menu`, rowId:`${perfix}${categories[i]}-menu`,description: `{FOOTER}`})
+}
+const sections = [{title: `${BOT_INFO.split(',')[0]} list menu`, rows: rows}]
+const button = {
+        text: `╭─❒「 𝗜𝗡𝗙𝗢 𝗕𝗢𝗧 」
+│⬡ 𝙋𝙧𝙚𝙛𝙞𝙭 𝘽𝙤𝙩 : ⌜ .  ⌟
+│⬡ 𝙉𝙖𝙢𝙚𝘽𝙤𝙩 : ${BOT_INFO.split(',')[0]}
+│⬡ 𝙐𝙨𝙚𝙧 : message.client.pushName
+│⬡ 𝙇𝙞𝙗 : 𝘽𝙖𝙞𝙡𝙚𝙮𝙨
+╰─❒`,
+        footer: "FOOTER",
+        buttonText: "list ⎙",
+        sections,
+}
+return await message.client.sendMessage( message.jid, button, { quoted: message});
+});

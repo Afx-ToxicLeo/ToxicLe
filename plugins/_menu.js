@@ -148,6 +148,14 @@ command
 
 let categories = ['converter','downloader','game','group','heroku','tool','user','x-media','search','Textpro','Maker menu']
 let rows =[];
+command
+	(
+		{
+			pattern: "list?(.*)",
+			fromMe: isPrivate,
+			type: "menu",
+		},
+		async (message, match) => {
 for(i=0;i<categories.length;i++){
   if([i]) rows.push({title: `${categories[i]}-menu`, rowId:`${perfix}${categories[i]}-menu`,description: `{FOOTER}`})
 }

@@ -7,7 +7,7 @@ const {
 } = require("../lib");
 const { FancyRandom, jslbuffer } = require('abu-bot');
 const { hostname, uptime } = require("os");
-const { BOT_INFO } = require("../config");
+const { BOT_INFO,HANDLERS} = require("../config");
 
 const image = BOT_INFO.split(',')[2];
 const image_1 = BOT_INFO.split(',')[3];
@@ -148,16 +148,16 @@ command
 
 let categories = ['converter','downloader','game','group','heroku','tool','user','x-media','search','Textpro','Maker menu']
 let rows =[];
-command
-	(
-		{
-			pattern: "list?(.*)",
-			fromMe: isPrivate,
-			type: "menu",
-		},
-		async (message, match) => {
+command(
+  {
+    pattern: "list",
+    fromMe: isPrivate,
+    desc: "To check ping",
+    type: "user",
+  },
+  async (message, match) => {
 for(i=0;i<categories.length;i++){
-  if([i]) rows.push({title: `${categories[i]}-menu`, rowId:`${perfix}${categories[i]}-menu`,description: `{FOOTER}`})
+  if([i]) rows.push({title: `${categories[i]}-menu`, rowId:`${HANDLERS[0]}${categories[i]}-menu`,description: "{FOOTER}"})
 }
 const sections = [{title: `${BOT_INFO.split(',')[0]} list menu`, rows: rows}]
 const button = {

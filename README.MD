@@ -16,6 +16,9 @@
 
 
 
+<a href='https://railway.app/template/kCLm-v?referralCode=meyZu5' target="_blank"><img alt='koyeb' src='https://img.shields.io/badge/-ᴅᴇᴘʟᴏʏ ɪɴ ʀᴀɪʟᴡᴀʏ-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>
+
+
 ## Thanks To
 * [`Abu`](https://github.com/Afx-Abu)
 * [`Inrl`](https://github.com/inrl-official)

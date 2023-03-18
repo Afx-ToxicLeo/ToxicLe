@@ -150,9 +150,9 @@ let categories = ['ᴅᴏᴡɴʟᴏᴀᴅ','ɢʀᴏᴜᴘ','sᴇᴀʀᴄʜ','ᴜ
 let rows =[];
 command(
   {
-    pattern: "'command",
+    pattern: "list",
     fromMe: isPrivate,
-    desc: "To check ping",
+    desc: "list menu",
     type: "user",
   },
   async (message, match) => {

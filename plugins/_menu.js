@@ -146,28 +146,27 @@ command
 	}
 );
 
-let categories = ['converter','downloader','game','group','heroku','tool','user','x-media','search','Textpro','Maker menu']
+let categories = ['ᴅᴏᴡɴʟᴏᴀᴅ','ɢʀᴏᴜᴘ','sᴇᴀʀᴄʜ','ᴜsᴇʀ','ᴛᴏᴏʟ',' ᴄᴏɴᴠᴇʀᴛᴇʀ','🔖 ∫ » ᴘɪɴɢ «','📮 ∫ » sᴄʀɪᴘᴛ «']
 let rows =[];
 command(
   {
-    pattern: "list",
+    pattern: "'command",
     fromMe: isPrivate,
     desc: "To check ping",
     type: "user",
   },
   async (message, match) => {
 for(i=0;i<categories.length;i++){
-  if([i]) rows.push({title: `${categories[i]}-menu`, rowId:`${HANDLERS[0]}${categories[i]}-menu`,description: "{FOOTER}"})
+  if([i]) rows.push({title: `${categories[i]}`, rowId:`${HANDLERS[0]}${categories[i]}`,description: "╰► select list-©"})
 }
-const sections = [{title: `${BOT_INFO.split(',')[0]} list menu`, rows: rows}]
+const sections = [{title: `─────「 List Menu 」─────`, rows: rows}]
 const button = {
-        text: `╭─❒「 𝗜𝗡𝗙𝗢 𝗕𝗢𝗧 」
-│⬡ 𝙋𝙧𝙚𝙛𝙞𝙭 𝘽𝙤𝙩 : ⌜ .  ⌟
-│⬡ 𝙉𝙖𝙢𝙚𝘽𝙤𝙩 : ${BOT_INFO.split(',')[0]}
-│⬡ 𝙐𝙨𝙚𝙧 : message.client.pushName
-│⬡ 𝙇𝙞𝙗 : 𝘽𝙖𝙞𝙡𝙚𝙮𝙨
-╰─❒`,
-        footer: "FOOTER",
+        text: `––––––━━━━━━━━•
+│☘︎ *ʟɪsᴛ*
+┣━━━━━━━━┅┅
+├[ *ᴜsᴇʀ* ]— ${message.pushName}
+┗––––––━━┅┅┅`,
+        footer: "ʙᴏᴛ",
         buttonText: "list ⎙",
         sections,
 }

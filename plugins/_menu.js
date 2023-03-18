@@ -157,7 +157,7 @@ command(
   },
   async (message, match) => {
 for(i=0;i<categories.length;i++){
-  if([i]) rows.push({title: `${categories[i]}`, rowId:`${HANDLERS[0]}${categories[i]}`,description: "╰► select list-©"})
+  if([i]) rows.push({title: `${categories[i]}`, rowId:`menu`,description: "╰► select list-©"})
 }
 const sections = [{title: `─────「 List Menu 」─────`, rows: rows}]
 const button = {

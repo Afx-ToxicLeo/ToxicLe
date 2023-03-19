@@ -4,7 +4,7 @@
   "description": "Toxic-Leo is a simple whatsApp Bot.",
   "main": "./index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "pm2 start . --attach --name ToxicLeo-md""
   },
   "repository": {
     "type": "git",

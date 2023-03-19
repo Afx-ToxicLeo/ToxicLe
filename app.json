@@ -24,7 +24,7 @@
       "description": "Your Session ID",
       "required": true
     }, 
-     "MODE": {
+     "WORK_TYPE": {
       "description": "mode",
       "required": true,
       "value": "private"
@@ -32,7 +32,7 @@
     "HANDLERS": {
       "description": "prefix for commands, enter false for no prefix",
       "required": true,
-      "value": ","
+      "value": "."
     },
     "LOGS": {
       "description": "need to show message logs ?",

@@ -23,6 +23,11 @@
     "SESSION_ID": {
       "description": "Your Session ID",
       "required": true
+    }, 
+     "MODE": {
+      "description": "mode",
+      "required": true,
+      "value": "private"
     },
     "HANDLERS": {
       "description": "prefix for commands, enter false for no prefix",

@@ -28,6 +28,11 @@
       "description": "mode",
       "required": true,
       "value": "private"
+    }, 
+      "BOT_INFO": {
+      "description": "botname;ownername;image url",
+      "required": true,
+      "value": "ToxicLeo,ᴛᴏxɪᴄʟᴇᴏ,https://i.imgur.com/bk3EKWZ.jpeg,https://i.imgur.com/bk3EKWZ.jpeg"
     },
     "HANDLERS": {
       "description": "prefix for commands, enter false for no prefix",

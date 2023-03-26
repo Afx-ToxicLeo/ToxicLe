@@ -90,11 +90,7 @@ Remaning    : ${secondsToDHMS(remaining)}`;
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -125,11 +121,7 @@ command(
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -190,11 +182,7 @@ command(
   }
 );
 
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
+
 
 command(
   {
@@ -237,9 +225,9 @@ command(
         Config.BRANCH + "..origin/" + Config.BRANCH,
       ]);
       if (commits.total === 0) {
-        return await message.sendMessage("_Already on latest version_");
+        return await message.sendMessage(" *Already on latest version*");
       } else {
-        await message.reply("_Updating_");
+        await message.reply(" *Updating*");
 
         try {
           var app = await heroku.get("/apps/" + Config.HEROKU_APP_NAME);
@@ -271,7 +259,7 @@ command(
     if (commits.total === 0) {
       await message.sendMessage("_Already on latest version_");
     } else {
-      var availupdate = "*ᴜᴘᴅᴀᴛᴇs ᴀᴠᴀɪʟᴀʙʟᴇ* \n\n";
+      var availupdate = "*Updates Available* \n\n";
       commits["all"].map((commit, num) => {
         availupdate += num + 1 + " ●  " + tiny(commit.message) + "\n";
       });
@@ -288,6 +276,7 @@ command(
     }
   }
 );
+ 
 
 
 command(

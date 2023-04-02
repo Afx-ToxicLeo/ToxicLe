@@ -241,7 +241,7 @@ const { state, saveCreds } = await useMultiFileAuthState(
   });
   process.on("uncaughtException", (err) => {
     let error = err.message;
-       let I'd = '9194
+       let Id = '919497206865'
     // conn.sendMessage(cid, { text: error });
     console.log(err);
   });

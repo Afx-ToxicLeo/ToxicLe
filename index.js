@@ -162,19 +162,20 @@ const { state, saveCreds } = await useMultiFileAuthState(
                 let teks3 = `* Promote From*\n*${metadata.subject}*\n*Selamat Anda Menjadi Admin*\n_~Jangan disalahgunakan!_`
                 let teks4 = `* Demote From*\n*${metadata.subject}*\n_Pangkat kamu telah di turunkan!_`
                 if (anu.acconnn == 'add') {
-                    conn.sendMessage(anu.id, { caption: teks1, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butwel, footer: esce, mentions: parseJid(msg) })
+                    conn.sendMessage(anu.id, { caption: teks1, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butwel, footer: esce })
                 } else if (anu.action == 'remove') {
-                    conn.sendMessage(anu.id, { caption: teks2, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butleav, footer: esce, mentions: parseJid(msg) })
+                    conn.sendMessage(anu.id, { caption: teks2, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butleav, footer: esce})
                 } else if (anu.action == 'promote') {
-                    conn.sendMessage(anu.id, { caption: teks3, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butselamat, footer: esce, mentions: parseJid(msg) })
+                    conn.sendMessage(anu.id, { caption: teks3, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butselamat, footer: esce })
                 } else if (anu.action == 'demote') {
-                    conn.sendMessage(anu.id, { caption: teks4, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butsebar, footer: esce, mentions: parseJid(msg) })
+                    conn.sendMessage(anu.id, { caption: teks4, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butsebar, footer: esce })
               }
             }
         } catch (err) {
             console.log(err)
         }
     })
+	
 	
         conn.ev.on("messages.upsert", async (m) => {
           if (m.type !== "notify") return;
@@ -240,7 +241,8 @@ const { state, saveCreds } = await useMultiFileAuthState(
   });
   process.on("uncaughtException", (err) => {
     let error = err.message;
-    // conn.sendMessage(conn.user.id, { text: error });
+       let I'd = '9194
+    // conn.sendMessage(cid, { text: error });
     console.log(err);
   });
 }

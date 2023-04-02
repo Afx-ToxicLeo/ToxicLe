@@ -7,8 +7,7 @@ const baseURI = "/apps/" + Config.HEROKU_APP_NAME;
 const simpleGit = require("simple-git");
 const { secondsToDHMS } = require("../lib");
 const git = simpleGit();
-const exec = require("child_process").exec;
-
+const exec = require("child_proceAfiya-md
 
 command(
   {
@@ -25,7 +24,6 @@ command(
     });
   }
 );
-
 
 command(
   {
@@ -52,11 +50,10 @@ command(
   }
 );
 
-
 command(
   {
     pattern: "dyno",
-    fromMe: isPrivate,
+    fromMe: true,
     desc: "Show Quota info",
     type: "heroku",
   },
@@ -90,8 +87,6 @@ Remaning    : ${secondsToDHMS(remaining)}`;
   }
 );
 
-
-
 command(
   {
     pattern: "setvar ",
@@ -120,8 +115,6 @@ command(
       });
   }
 );
-
-
 
 command(
   {
@@ -153,8 +146,6 @@ command(
   }
 );
 
-
-
 command(
   {
     pattern: "getvar ",
@@ -182,8 +173,6 @@ command(
   }
 );
 
-
-
 command(
   {
     pattern: "allvar",
@@ -208,8 +197,6 @@ command(
   }
 );
 
-
-
 command(
   {
     pattern: "update",
@@ -225,9 +212,9 @@ command(
         Config.BRANCH + "..origin/" + Config.BRANCH,
       ]);
       if (commits.total === 0) {
-        return await message.sendMessage(" *Already on latest version*");
+        return await message.sendMessage("_Already on latest version_");
       } else {
-        await message.reply(" *Updating*");
+        await message.reply("*Update Started*");
 
         try {
           var app = await heroku.get("/apps/" + Config.HEROKU_APP_NAME);
@@ -251,33 +238,25 @@ command(
         }
         await git.push("heroku", Config.BRANCH);
 
-        await message.sendMessage("UPDATED");
+        await message.sendMessage("*Successfully updated*");
       }
     }
     await git.fetch();
     var commits = await git.log([Config.BRANCH + "..origin/" + Config.BRANCH]);
     if (commits.total === 0) {
-      await message.sendMessage("_Already on latest version_");
+      await message.sendMessage("*Already Updated* ");
     } else {
-      var availupdate = "*Updates Available* \n\n";
+      var availupdate = "*ᴜᴘᴅᴀᴛᴇs ᴀᴠᴀɪʟᴀʙʟᴇ* \n\n";
       commits["all"].map((commit, num) => {
         availupdate += num + 1 + " ●  " + tiny(commit.message) + "\n";
       });
       return await message.client.sendMessage(message.jid, {
         text: availupdate,
         footer: tiny("click here to update"),
-        buttons: [
-          {
-            buttonId: `${prefix}update now`,
-            buttonText: { displayText: tiny("update now") },
-          },
-        ],
       });
     }
   }
 );
- 
-
 
 command(
   {
@@ -289,8 +268,7 @@ command(
   async (message) => {}
 );
 
-//Credits Mask-ser
-//created by mask ser for HERMIT_MD
+
 const { SUDO } = require("../config");
 const { Function } = require("../lib/");
 Function(

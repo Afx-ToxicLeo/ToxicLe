@@ -121,9 +121,61 @@ const { state, saveCreds } = await useMultiFileAuthState(
       }\`\`\``;
       conn.sendMessage(conn.user.id, { text: str });
       try {
-        conn.ev.on("group-participants.update", async (data) => {
-          Greetings(data, conn);
-        });
+        conn.ev.on('group-participants.update', async (anu) => {
+        console.log(anu)
+        try {
+            let metadata = await conn.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+                // Get Profile Picture User
+                try {
+                    ppuser = await conn.profilePictureUrl(num, 'image')
+                } catch {
+                    ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+                
+            
+         const reSize = async(buffer, ukur1, ukur2) => {
+             return new Promise(async(resolve, reject) => {
+             let jimp = require('jimp')
+             let parseJid = require("../lib/");
+             var baper = await jimp.read(buffer);
+             var ab = await baper.resize(ukur1, ukur2).getBufferAsync(jimp.MIME_JPEG)
+             resolve(ab)
+             })
+             }
+
+            
+                try {
+                    ppgroup = await conn.profilePictureUrl(anu.id, 'image')
+                } catch {
+                    ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+                
+                let butwel = [{ buttonId: 'menu', buttonText: { displayText: 'Welcome' }, type: 1 }]
+                let butleav = [{ buttonId: 'menu', buttonText: { displayText: 'Selamat Tinggal' }, type: 1 }]
+                let butselamat = [{ buttonId: 'menu', buttonText: { displayText: 'Selamat!' }, type: 1 }]
+                let butsebar = [{ buttonId: 'menu', buttonText: { displayText: 'Sabar' }, type: 1 }]
+                let esce = ('© At')
+                let teks1 = `*Halo`
+                let teks2 = `*Selamat Admin_`
+                let teks3 = `* Promote From*\n*${metadata.subject}*\n*Selamat Anda Menjadi Admin*\n_~Jangan disalahgunakan!_`
+                let teks4 = `* Demote From*\n*${metadata.subject}*\n_Pangkat kamu telah di turunkan!_`
+                if (anu.acconnn == 'add') {
+                    conn.sendMessage(anu.id, { caption: teks1, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butwel, footer: esce, mentions: parseJid(msg) })
+                } else if (anu.action == 'remove') {
+                    conn.sendMessage(anu.id, { caption: teks2, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butleav, footer: esce, mentions: parseJid(msg) })
+                } else if (anu.action == 'promote') {
+                    conn.sendMessage(anu.id, { caption: teks3, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butselamat, footer: esce, mentions: parseJid(msg) })
+                } else if (anu.action == 'demote') {
+                    conn.sendMessage(anu.id, { caption: teks4, location: { jpegThumbnail: await reSize(ppuser, 100, 100)}, buttons: butsebar, footer: esce, mentions: parseJid(msg) })
+              }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    })
+	
         conn.ev.on("messages.upsert", async (m) => {
           if (m.type !== "notify") return;
           let ms = m.messages[0];

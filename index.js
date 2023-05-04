@@ -36,7 +36,7 @@ let plaintext = Config.SESSION_ID.replaceAll("ToxicLeo~", "");
 let key = 'k!t';
 let decryptedPlainText = aes256.decrypt(key, plaintext);
   async function md(){
-   let {body} = await got(`https://inrl-web.onrender.com/api/session?id=${decryptedPlainText}`)
+   let {body} = await got(`https://jsl-web.vercel.app/api/session?id=${decryptedPlainText}`)
   let result = JSON.parse(body).result[0].data;
 fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
    }
